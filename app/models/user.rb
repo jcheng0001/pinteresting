@@ -4,7 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+    has_many :pins
+
 	validates :password, :presence => true,
                      :on => :create,
                      :format => {:with => /\A.*(?=.{8,})(?=.*\d)(?=.*[a-z]).*\Z/ }
+
+
+
 end
