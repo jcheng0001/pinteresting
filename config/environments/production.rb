@@ -81,6 +81,7 @@ Rails.application.configure do
   # Note to set this yo our actual host url at the localhost bit
   config.action_mailer.default_url_options = { host: '#' }
 
+  # Set paperclip to upload images to amazon S3
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
