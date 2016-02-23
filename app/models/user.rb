@@ -6,10 +6,12 @@ class User < ActiveRecord::Base
 
     has_many :pins
 
+	validates :name, presence: true
+
 	validates :password, :presence => true,
                      :on => :create,
                      :format => {:with => /\A.*(?=.{8,})(?=.*\d)(?=.*[a-z]).*\Z/ }
-
+	
 
 
 end
