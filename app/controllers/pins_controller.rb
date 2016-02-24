@@ -20,7 +20,7 @@ def index
   def create
     @pin = current_user.pins.build(pin_params)
     if @pin.save
-      redirect_to @pin, notice: 'Pin was successfully created.'
+      redirect_to @pin, notice: 'Bakery item was successfully created - Well done Angela!'
     else
       render action: 'new'
     end
@@ -28,7 +28,7 @@ def index
 
   def update
     if @pin.update(pin_params)
-      redirect_to @pin, notice: 'Pin was successfully updated.'
+      redirect_to @pin, notice: 'Bakery item was successfully updated - Well done Angela!'
     else
       render action: 'edit'
     end
@@ -47,7 +47,7 @@ def index
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
+      redirect_to pins_path, notice: "Not authorized to edit this Bakery item!" if @pin.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
